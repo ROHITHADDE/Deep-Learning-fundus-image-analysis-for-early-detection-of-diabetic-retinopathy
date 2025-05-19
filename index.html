@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Diabetic Retinopathy Detection</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+   <style>
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #content{
+        display: flex;
+        justify-content: center;
+    }
+    #para{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-wrap: wrap;
+        
+    }
+    .a{
+        margin: 10px;
+    }
+    img{
+        height: 30%;
+        width: 90%;
+        margin: 5px;
+        
+    }
+    header{
+        display: flex;
+        justify-content: center;
+    }
+    h1{
+        background-color: aqua;
+        color: rgb(14, 2, 24);
+        border: 2px solid grey;
+        border-radius: 5px;
+        padding: 2px;
+        text-align: center;
+        width: fit-content;
+        box-shadow: 2px 2px 1px skyblue;
+        
+    }
+    button{
+        margin: 0 5px;
+        background-color: beige;
+        padding: 0 5px;
+    }
+   
+   </style>
+
+   
+</head>
+<body >
+    <header>
+        <h1>Welcome to Diabetic Retinopathy Detection</h1>
+    </header>
+    <main>
+        <div class="buttons">
+            
+                <form action="{{url_for('login')}}" method="POST"><button type="submit">Login</button></form>
+                <form action="{{url_for('register')}}" method="POST"><button type="submit">Register</button></form>
+            
+            
+        </div>
+        <img src="static\index.jpg" alt="">
+        <div id="content">
+            <h3>ABOUT PROJECT</h3>
+        </div>
+        <div id="para">
+            <div class="a">
+                <h4>Problem</h4>
+                <p>Diabetic Retinopathy (DR) is a diabetes complication that affects the eyes and can lead to vision loss or blindness if left undiagnosed or untreated. The condition is characterized by damage to the blood vessels of the retina caused by prolonged high blood sugar levels. Early detection and diagnosis of diabetic retinopathy are critical for effective treatment and prevention of irreversible damage. However, current manual screening methods are time-consuming, expensive, and require specialized ophthalmologists, which makes DR detection inaccessible to people in rural or underserved areas.</p>
+            </div>
+            <div class="a">
+                <h4>Solution</h4>
+                <p>Diabetic Retinopathy (DR) is a diabetes complication that affects the eyes and can lead to vision loss or blindness if left undiagnosed or untreated. The condition is characterized by damage to the blood vessels of the retina caused by prolonged high blood sugar levels. Early detection and diagnosis of diabetic retinopathy are critical for effective treatment and prevention of irreversible damage. However, current manual screening methods are time-consuming, expensive, and require specialized ophthalmologists, which makes DR detection inaccessible to people in rural or underserved areas.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

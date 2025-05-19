@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+        }
+       body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       }
+       input{
+        border: 1px solid grey;
+        margin: 0 20px;
+        height: 30px;
+        padding: 2px;
+        border-radius: 2px;
+       }
+
+       h2{
+        display: flex;
+        justify-content: center;
+        background-color: antiquewhite;
+        color: rgb(54, 6, 81);
+       }
+       button{
+        height: 25px;
+        padding: 0 10px;
+        background-color: blueviolet;
+        color: rgb(227, 234, 234);
+        font-weight: bold;
+        border-radius: 2px;
+        border: none;
+       }
+       button:hover{
+        background-color: blanchedalmond;
+        color: brown;
+       }
+    </style>
+
+</head>
+<body>
+    <h2>Diabetic Retinopathy Detection</h2>
+    <form action="{{ url_for('output')}}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" placeholder="Choose file">
+        <button type="submit">Predict</button>
+    </form>
+   
+</body>
+</html>

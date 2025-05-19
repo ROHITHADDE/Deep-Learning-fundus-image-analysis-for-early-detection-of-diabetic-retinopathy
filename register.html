@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Diabetic Retinopathy Detection</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+
+    <style>
+        header{
+            display: flex;
+            justify-content: center;
+
+        }
+        h1{
+            background-color: aqua;
+            color: darkblue;
+            text-align: center;
+            padding: 0 5px;
+            border: 2px solid blue;
+            border-radius: 2px;
+            box-shadow: 2px 2px 1px grey;
+            margin-bottom: 15%;
+        }
+        li{
+            list-style: none;
+        }
+        ul>li>button{
+            border: none;
+            margin: 2px;
+        }
+        ul>form>li>button:hover{
+            border: none;
+            background-color: bisque;
+            margin: 2px;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+        }
+        p{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1> DR Register for Diabetic Retinopathy Detection</h1>
+        <nav>
+            <ul>
+                <form action="{{url_for('index')}}" method="post">
+                    <li><button type="submit">Home</button></li>
+                </form>
+                <form action="{{url_for('predict')}}" method="post">
+                    <li><button type="submit">Predict</button></li>
+                </form>
+                <form action="{{url_for('logout')}}" method="post">
+                    <li><button type="submit">logout</button></li>
+                </form>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="{{ url_for('register')}}" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="id">Username:</label>
+            <input type="text" id="id" name="id" required><br>
+
+            <label for="psw">Password:</label>
+            <input type="password" id="psw" name="psw" required><br>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <!-- {% if pred %}
+        {{ pred }}
+        {% endif %} -->   
+    </main>
+    <p>Already have an account? <a href="/login"><form action="{{url_for('login')}}" method="post"><button type="submit">Login</button></form></a></p>
+</body>
+</html>
